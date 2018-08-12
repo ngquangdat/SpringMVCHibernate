@@ -17,6 +17,10 @@ import com.vaadin.ui.VerticalLayout;
 public class LoginView extends UI{
 	@Override
     protected void init(VaadinRequest vaadinRequest) {
+		final Layout home = new Layout();
+		
+		
+		
         final VerticalLayout layout = new VerticalLayout();
         
         final TextField username = new TextField();
@@ -27,9 +31,16 @@ public class LoginView extends UI{
         
 
         Button button = new Button("Đăng nhập");
+        
+//        button.addClickListener(e -> {
+//            layout.addComponent(new Label("Thanks " + username.getValue() 
+//                    + ", it works!"));
+//        });
+        
+        
+        
         button.addClickListener(e -> {
-            layout.addComponent(new Label("Thanks " + username.getValue() 
-                    + ", it works!"));
+        	setContent(home);
         });
        
         layout.addComponents(username, password, button);

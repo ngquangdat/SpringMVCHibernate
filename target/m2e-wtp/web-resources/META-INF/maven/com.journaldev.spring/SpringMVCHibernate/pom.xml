@@ -45,10 +45,16 @@
 	
 	
 	<dependencies>
-	<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-server</artifactId>
-		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.vaadin.addon/confirmdialog -->
+<dependency>
+    <groupId>org.vaadin.addon</groupId>
+    <artifactId>confirmdialog</artifactId>
+    <version>3.2.0</version>
+</dependency>
+	
+
+
+
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-push</artifactId>
