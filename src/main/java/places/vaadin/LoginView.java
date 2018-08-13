@@ -1,55 +1,53 @@
 package places.vaadin;
 
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
-import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.PasswordField;
-import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.PasswordField;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.server.VaadinServletConfiguration;
 
+
+
+
+
+@SuppressWarnings("serial")
 @Theme("placestheme")
-public class LoginView extends UI{
-	@Override
-    protected void init(VaadinRequest vaadinRequest) {
-		final Layout home = new Layout();
+public class LoginView extends VerticalLayout{
+	
+	public LoginView() {
+		final TextField username = new TextField("Tên đăng nhập");
+	    
+	    final PasswordField password = new PasswordField("Mật khẩu");
+	    
+	    Button button = new Button("Đăng nhập");
+	    
+	    add(username, password, button);
+	    
+	}
+	
+	
+	public class LoginUI extends UI{
+		protected void init(VaadinRequest vaadinRequest) {
+			LoginView loginView = new LoginView();
+			add(loginView);
+		}
 		
-		
-		
-        final VerticalLayout layout = new VerticalLayout();
-        
-        final TextField username = new TextField();
-        username.setCaption("Tên đăng nhập:");
-        
-        final PasswordField password = new PasswordField();
-        password.setCaption("Mật khẩu:");
-        
-
-        Button button = new Button("Đăng nhập");
-        
-//        button.addClickListener(e -> {
-//            layout.addComponent(new Label("Thanks " + username.getValue() 
-//                    + ", it works!"));
-//        });
-        
-        
-        
-        button.addClickListener(e -> {
-        	setContent(home);
-        });
-       
-        layout.addComponents(username, password, button);
-        
-        setContent(layout);
-    }
-
-    @WebServlet(urlPatterns = "/login/*", name = "LoginUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = LoginView.class, productionMode = false)
+	}
+	
+	@WebServlet(urlPatterns = "/login/*", name = "LoginUIServlet", asyncSupported = true)
+    @VaadinServletConfiguration(ui = LoginUI.class, productionMode = false)
     public static class LoginUIServlet extends VaadinServlet {
     }
+	
+	
 }
+
+
+

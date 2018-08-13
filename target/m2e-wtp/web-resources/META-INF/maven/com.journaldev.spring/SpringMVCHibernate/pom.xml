@@ -45,6 +45,19 @@
 	
 	
 	<dependencies>
+
+<!-- https://mvnrepository.com/artifact/com.github.appreciated/app-layout-addon -->
+<dependency>
+    <groupId>com.github.appreciated</groupId>
+    <artifactId>app-layout-addon</artifactId>
+    <version>1.0.2</version>
+</dependency>
+
+
+
+
+
+
 	<!-- https://mvnrepository.com/artifact/org.vaadin.addon/confirmdialog -->
 <dependency>
     <groupId>org.vaadin.addon</groupId>
@@ -52,7 +65,52 @@
     <version>3.2.0</version>
 </dependency>
 	
+<!-- https://mvnrepository.com/artifact/com.vaadin/flow-server -->
+<dependency>
+    <groupId>com.vaadin</groupId>
+    <artifactId>flow-server</artifactId>
+    <version>1.0.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.vaadin/flow -->
+<dependency>
+    <groupId>com.vaadin</groupId>
+    <artifactId>flow</artifactId>
+    <version>1.0.0</version>
+    <type>pom</type>
+    <scope>provided</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.vaadin/flow-html-components -->
+<dependency>
+    <groupId>com.vaadin</groupId>
+    <artifactId>flow-html-components</artifactId>
+    <version>1.0.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.vaadin/flow -->
+<dependency>
+    <groupId>com.vaadin</groupId>
+    <artifactId>flow</artifactId>
+    <version>1.0.0</version>
+    <type>pom</type>
+    <scope>provided</scope>
+</dependency>
 
+
+
+
+<!-- https://mvnrepository.com/artifact/com.vaadin/flow-component-base -->
+<dependency>
+    <groupId>com.vaadin</groupId>
+    <artifactId>flow-component-base</artifactId>
+    <version>1.0.4</version>
+    <type>pom</type>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.vaadin/flow-component-demo-helpers -->
+<dependency>
+    <groupId>com.vaadin</groupId>
+    <artifactId>flow-component-demo-helpers</artifactId>
+    <version>1.0.0</version>
+    <scope>test</scope>
+</dependency>
 
 
 		<dependency>
